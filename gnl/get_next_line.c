@@ -6,7 +6,7 @@
 /*   By: lbardet- <lbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:22:18 by lbardet-          #+#    #+#             */
-/*   Updated: 2025/10/21 07:22:48 by lbardet-         ###   ########.fr       */
+/*   Updated: 2025/10/21 11:30:48 by lbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strcopy(char *s1, char *s2)
 		return (ft_strjoin("", s2));
 	s3 = ft_strjoin(s1, s2);
 	free(s1);
+	if (!s3)
+		return (NULL);
 	return (s3);
 }
 
@@ -31,7 +33,10 @@ char	*ft_read(char *str, int fd)
 
 	str1 = malloc(BUFFER_SIZE + 1);
 	if (!str1)
+	{
+		free (str);
 		return (NULL);
+	}
 	a = read(fd, str1, BUFFER_SIZE);
 	while (a > 0)
 	{
@@ -54,13 +59,15 @@ char	*ft_trimmedline(char *str)
 {
 	char	*str1;
 	int		a;
+	int		need_newline;
 
 	if (!str || !*str)
 		return (NULL);
 	a = 0;
 	while (str[a] && str[a] != '\n')
 		a++;
-	str1 = malloc(a + 2);
+	need_newline = (str[a] == '\n');
+	str1 = malloc(a + need_newline + 1);
 	if (!str1)
 		return (NULL);
 	a = 0;
@@ -69,9 +76,9 @@ char	*ft_trimmedline(char *str)
 		str1[a] = str[a];
 		a++;
 	}
-	if (str[a] == '\n')
+	if (need_newline)
 		str1[a++] = '\n';
-	str1[a] = 0;
+	str1[a] = '\0';
 	return (str1);
 }
 

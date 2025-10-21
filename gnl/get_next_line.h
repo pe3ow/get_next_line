@@ -6,14 +6,14 @@
 /*   By: lbardet- <lbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:22:21 by lbardet-          #+#    #+#             */
-/*   Updated: 2025/10/21 07:01:16 by lbardet-         ###   ########.fr       */
+/*   Updated: 2025/10/21 11:26:18 by lbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 14
+#  define BUFFER_SIZE 400
 # endif
 
 # include <stdlib.h>
