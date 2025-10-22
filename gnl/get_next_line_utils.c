@@ -6,7 +6,7 @@
 /*   By: lbardet- <lbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:22:16 by lbardet-          #+#    #+#             */
-/*   Updated: 2025/10/21 07:21:51 by lbardet-         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:31:48 by lbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	*ft_strchr(const char *s, int c)
 
 size_t	ft_strlen(const char *s)
 {
-	int	c;
+	size_t	c;
 
 	c = 0;
 	while (s[c])

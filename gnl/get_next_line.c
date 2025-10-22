@@ -6,7 +6,7 @@
 /*   By: lbardet- <lbardet-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 21:22:18 by lbardet-          #+#    #+#             */
-/*   Updated: 2025/10/21 11:30:48 by lbardet-         ###   ########.fr       */
+/*   Updated: 2025/10/22 16:23:04 by lbardet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ char	*ft_strcopy(char *s1, char *s2)
 
 char	*ft_read(char *str, int fd)
 {
-	char	*str1;
-	int		a;
+	char		*str1;
+	ssize_t		a;
 
 	str1 = malloc(BUFFER_SIZE + 1);
 	if (!str1)
